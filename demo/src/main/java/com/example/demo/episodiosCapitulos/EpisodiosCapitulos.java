@@ -1,29 +1,28 @@
-package com.example.demo.comentario;
+package com.example.demo.episodiosCapitulos;
 
 import java.sql.Date;
 
 import com.example.demo.mangaManhwa.MangaManhwa;
-import com.example.demo.usuario.Usuario;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
 @Entity
 @Data
-public class Comentario {
-
+public class EpisodiosCapitulos {
     @Id
     @GeneratedValue (strategy =  GenerationType.AUTO)
     private long id;
+    private Integer nro_cap;
+    
+    @Lob
     private String contenido;
-    private Date fecha_comentario;
-
-    @ManyToOne
-    private Usuario usuario;
+    private Date fecha_publicacion;
 
     @ManyToOne
     private MangaManhwa mangaManhwa;

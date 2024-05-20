@@ -1,9 +1,8 @@
-package com.example.demo.comentario;
+package com.example.demo.usuario;
 
 import java.sql.Date;
 
-import com.example.demo.mangaManhwa.MangaManhwa;
-import com.example.demo.usuario.Usuario;
+import com.example.demo.rol.Rol;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,17 +13,15 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Comentario {
-
+public class Usuario {
     @Id
     @GeneratedValue (strategy =  GenerationType.AUTO)
     private long id;
-    private String contenido;
-    private Date fecha_comentario;
+    private String nombre;
+    private String correo;
+    private String password;
+    private Date fecha_registro;
 
     @ManyToOne
-    private Usuario usuario;
-
-    @ManyToOne
-    private MangaManhwa mangaManhwa;
+    private Rol rol;
 }
